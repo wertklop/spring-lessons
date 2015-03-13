@@ -8,6 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <java-version>1.7</java-version>
+        <sl4j-version>1.5.8</sl4j-version>
     </properties>
 
 
@@ -27,6 +28,24 @@
         <!--*********************************-->
 
         <!--********* Логгирование *******-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${sl4j-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${sl4j-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${sl4j-version}</version>
+        </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
