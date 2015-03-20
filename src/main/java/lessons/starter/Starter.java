@@ -30,7 +30,8 @@ public class Starter {
 
         logger.info(context.getBean("greetingService"));
 
-        logger.info("Message: " + context.getMessage("message", null, Locale.getDefault()));
+        logger.info("Message: " + context.getMessage("message", null, Locale.ROOT));        //Message: Alligators rock!
+        logger.info("Message: " + context.getMessage("message", null, new Locale("ru")));   //Message: Русский рок!
         logger.info("Argument.required: " + context.getMessage("argument.required", new Object[]{"Test_Argument"}, Locale.getDefault()));
         logger.info("Argument.required: " + context.getMessage("argument.required", new Object[]{"Test_UK_Argument"}, Locale.UK));
 
