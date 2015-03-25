@@ -1,5 +1,6 @@
 package lessons.starter;
 
+import lessons.ConversionConfiguration;
 import lessons.entity.Person;
 import lessons.validator.AddressValidator;
 import lessons.validator.PersonValidator;
@@ -8,7 +9,10 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.PropertyValue;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.validation.DataBinder;
 import org.springframework.validation.DefaultMessageCodesResolver;
 import org.springframework.validation.MessageCodesResolver;
@@ -29,6 +33,7 @@ public class ValidationBindingConversionStarter {
         starter = new ValidationBindingConversionStarter();
         starter.personValidate();
         starter.beanWrapperExample();
+        starter.conversionTypes();
     }
 
     private void personValidate() {
@@ -60,5 +65,12 @@ public class ValidationBindingConversionStarter {
         beanWrapper.setPropertyValue(propertyValue);
         logger.info("Person from Person - name: " + beanWrapper.getPropertyValue("name") + ", age: " + beanWrapper.getPropertyValue("age"));
         logger.info("Person from Person - name: " + person.getName() + ", age: " + person.getAge());
+    }
+
+    private void conversionTypes() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(ConversionConfiguration.class);
+        ConversionService service = (ConversionService) context.getBean(ConversionService.class);
+        Integer convertedObject = service.convert("1", Integer.class);
+        logger.info("Integer value: " + convertedObject); //Integer value: 1001
     }
 }
