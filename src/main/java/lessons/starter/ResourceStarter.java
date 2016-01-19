@@ -59,32 +59,31 @@ public class ResourceStarter {
 //        resource = context.getResource("src/main/resources/log4j.properties");
 //        LOGGER.info("log4j.properties exist: " + resource.getFile().exists()); //IOException
         resource = context.getResource("file:src/main/resources/log4j.properties");
-        LOGGER.info("log4j.properties exist: " + resource.getFile().exists());
+        LOGGER.info("file:src/main/resources/log4j.properties exist: " + resource.getFile().exists());
         resource = context.getResource("log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("log/log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("classpath:log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("classpath:log/log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("file:log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("file:log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("file:log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("file:log/log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("file:src/main/resources/log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
-
+        LOGGER.info("file:src/main/resources/log/log.txt exist: " + resource.getFile().exists());
         LOGGER.info("context = new FileSystemXmlApplicationContext()");
         context = new FileSystemXmlApplicationContext();
         resource = context.getResource("log4j.properties");
         LOGGER.info("log4j.properties exist: " + resource.getFile().exists());
         resource = context.getResource("src/main/resources/log4j.properties");
-        LOGGER.info("log4j.properties exist: " + resource.getFile().exists());
+        LOGGER.info("src/main/resources/log4j.properties exist: " + resource.getFile().exists());
         resource = context.getResource("log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("log/log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("classpath:log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("classpath:log/log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("file:log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("file:log.txt exist: " + resource.getFile().exists());
         resource = context.getResource("file:log/log.txt");
-        LOGGER.info("log.txt exist: " + resource.getFile().exists());
+        LOGGER.info("file:log/log.txt exist: " + resource.getFile().exists());
         LOGGER.info("****************************************************");
     }
 }
